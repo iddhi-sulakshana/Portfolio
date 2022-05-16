@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+# Version 1
+
+CACHE:
+/style.css
+/index.html
+/script.js
+/img/favicon.jpg
+/img/logo.png
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css
+
+FALLBACK:
+/ /offline.html
+
+NETWORK
