@@ -5,12 +5,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "copy": "copyfiles -f ./img/texture/* ./dist/img/texture && echo 'all dist copied.'"
   },
   "devDependencies": {
-    "vite": "^2.9.9"
+    "vite": "^2.9.9",
+    "vite-plugin-string": "^1.1.2"
   },
   "dependencies": {
+    "gsap": "^3.10.4",
+    "split-type": "^0.2.5",
     "three": "^0.140.2"
   }
 }

@@ -6,67 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="black">
 
-    <title>iddhiDasanayaka | Web / Desktop / Mobile App Developer & Designer</title>
-    <link rel="preload" href="style.css" as="style">
-    <link rel="preload" href="img/favicon.jpg" as="image">
-    <link rel="preload" href="script.js" as="script">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" as="style">
-    
+    <title>Iddhi | Web / Desktop / Mobile Developer & Designer</title>
+    <!-- <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" as="style" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/jpg" href="img/favicon.jpg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="./img/favicon.jpg">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <button id="theme-changer" onclick="changeTheme(this)"><i class="fa-solid fa-sun"></i></button>
+    <button id="theme-changer"><i class="fa-solid fa-sun"></i></button>
     <header>
         <nav>
             <div class="top-logo">
-                <a href="#home">
+                <a onclick="document.getElementById('home').scrollIntoView(false)">
                     <img src="img/logo.png" alt="Logo" class="logo-img">
                 </a>
             </div>
-            <div class="top-menu-section">
-                <div class="menu-item active"><a href="#about">About</a></div>
-                <div class="menu-item drop-down">Work
-                    <div class="drop-down-menu">
-                        <div class="drop-down-item"><a href="#web">Web Application</a></div>
-                        <div class="drop-down-item"><a href="#desktop">Desktop Application</a></div>
-                        <div class="drop-down-item"><a href="#mobile">Mobile Application</a></div>
-                        <div class="drop-down-item"><a href="#game">Games</a></div>
+            <div class="menu-container">
+                <div class="top-menu-section">
+                    <div class="menu-item active"><a onclick="document.getElementById('about').scrollIntoView(false)">About</a></div>
+                    <div class="menu-item drop-down">Work
+                        <div class="drop-down-menu">
+                            <div class="drop-down-item"><a onclick="document.getElementById('web').scrollIntoView(false)">Web Application</a></div>
+                            <div class="drop-down-item"><a onclick="document.getElementById('desktop').scrollIntoView(false)">Desktop Application</a></div>
+                            <div class="drop-down-item"><a onclick="document.getElementById('mobile').scrollIntoView(false)">Mobile Application</a></div>
+                            <div class="drop-down-item"><a onclick="document.getElementById('game').scrollIntoView(false)">Games</a></div>
+                        </div>
                     </div>
+                    <div class="menu-item"><a href="">Resume</a></div>
                 </div>
-                <div class="menu-item"><a href="">Resume</a></div>
+                <div class="top-social-section">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="social-items">
+                        <div class="social-item"><a href="https://twitter.com/DasanayakaIddhi"><i class="fa-brands fa-twitter"></i></a></div>
+                        <div class="social-item"><a href="https://github.com/iddhi-sulakshana"><i class="fa-brands fa-github"></i></a></div>
+                        <div class="social-item"><a href="https://discord.com/users/Iddhi#5966"><i class="fa-brands fa-discord"></i></a></div>
+                        <div class="social-item"><a href="https://www.linkedin.com/in/iddhi-dasanayaka-b61108221/"><i class="fa-brands fa-linkedin-in"></i></a></div>
+                        <div class="social-item"><a href="mailto:iddhidasanayaka@gmail.com"><i class="fa-solid fa-envelope"></i></a></div>
+                    </div>   
+                </div>
             </div>
-            <div class="top-social-section">
-                <div class="social-item"><a href="https://twitter.com/DasanayakaIddhi"><i class="fa-brands fa-twitter"></i></a></div>
-                <div class="social-item"><a href="https://github.com/iddhi-sulakshana"><i class="fa-brands fa-github"></i></a></div>
-                <div class="social-item"><a href="https://discord.com/users/Iddhi#5966"><i class="fa-brands fa-discord"></i></a></div>
-                <div class="social-item"><a href="https://www.linkedin.com/in/iddhi-dasanayaka-b61108221/"><i class="fa-brands fa-linkedin-in"></i></a></div>
-                <div class="social-item"><a href="mailto:iddhidasanayaka@gmail.com"><i class="fa-solid fa-envelope"></i></a></div>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
             </div>
         </nav>
     </header>
     <main>
         <section id="home">
-            <div class="content">
+            <div class="content" id="split">
                 <h1 class="title">
                     <span>Hi</span>
-                    <span>I'm Iddhi,</span>
+                    <span>I'm <span class="name">Iddhi</span>,</span>
                 </h1>
                 <h3 class="sub-title">Programmer</h3>
                 <h5 class="mini-title">
-                    <span>Web / Mobile / Desktop Application</span>
-                    <span>Developer & Designer</span>
+                    <span>Web / Mobile / Desktop Application Developer & Designer</span>
                 </h5>
+                <div class="back-content" id="3d"></div>
             </div>
         </section>
         <section id="about">
             <div class="content">
                 <h2 class="title">About Me</h2>
-                <p>I'm a web,mobile, desktop applications developer & designer located at Sri Lanka. I have a serious passion for developing web, platform based applications and games.</p>
-                <p>Well-organized person, great problem solver, high attention to details (Perfection guy) Fan of TV series and Movies</p>
+                <p class="split-animate">I'm a web,mobile, desktop applications developer & designer located at Sri Lanka. I have a serious passion for developing web, platform based applications and games.</p>
+                <p>Well-organized person, great problem solver, high attention to details. Fan of TV series and Movies</p>
                 <p>Intersted in working on ambitious open source projects or organization with positive people.</p>
+                <div class="back-content" id="3d2"></div>
             </div>
         </section>
         <section id="web">
@@ -145,7 +153,10 @@
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="./js/animation.js" type="module"></script>
+    <script src="./js/3d.js" type="module"></script>
+    <script src="./js/3d2.js" type="module"></script>
+    <script src="./js/script.js" type="module"></script>
 </body>
 
 </html>

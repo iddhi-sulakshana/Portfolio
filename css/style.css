@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&display=swap');
+:root {
+    font-family: "Open Sans",sans-serif;
+    /* simple dark purplish color #262833 */
+    --bgPrimaryColor: #1d1d1d;
+    --bgSecondryColor: #303030;
+    --primaryColor: #ffffff;
+    --secondaryColor: #03dac6;
+    --transitionDuration: 300ms;
+    --font1: 'Fredoka One', cursive;
+    --font2: 'Inconsolata', monospace;
+    --font3: 'Roboto Mono', monospace;
+}
+
+.light {
+    --bgPrimaryColor: #ffffff;
+    --bgSecondryColor: #03dac6;
+    --primaryColor: #1d1d1d;
+    --secondaryColor: #6200ee;
+}
+
+* {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: color calc(var(--transitionDuration) * 0.3), background-color calc(var(--transitionDuration) * 2);
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+body {
+    z-index: -50;
+    background-color: var(--bgPrimaryColor);
+    color: var(--primaryColor);
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+#theme-changer {
+    z-index: 900;
+    position: fixed;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--bgSecondryColor);
+    color: var(--primaryColor);
+    font-size: 1.7rem;
+    cursor: pointer;
+    box-shadow: inset 0.1rem 0.1rem 0.2rem var(--primaryColor);
+}
+
+#theme-changer:hover {
+    box-shadow: inset 0.1rem 0.1rem 0.2rem var(--primaryColor),
+                0.1rem 0.1rem 0.2rem var(--secondaryColor);
+}
+
+/* Header Section */
+header {
+    top: 0;
+    position: fixed;
+    max-height: 15vh;
+    width: 100vw;
+    padding: var(--padgePadding);
+    padding-bottom: 0;
+    background: var(--bgPrimaryColor);
+    z-index: 100;
+}
+
+/* Navigation */
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > .top-logo {
+    margin-left: 0;
+    min-width: 10vh;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > .top-logo > a > img {
+    max-height: 10vh;
+    max-width: 10vh;
+}
+
+nav > .menu-container {
+    display: flex;
+    flex-grow: 1;
+}
+
+nav > .menu-container > .top-menu-section {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2vw;
+}
+
+nav > .menu-container > .top-menu-section > .menu-item {
+    font-size: 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav > .menu-container > .top-menu-section > .menu-item > a {
+    text-decoration: none;
+    color: var(--primaryColor);
+}
+
+nav > .menu-container > .top-menu-section > .menu-item.active > a {
+    color: var(--secondaryColor);
+    cursor: default;
+}
+
+nav > .menu-container > .top-menu-section > .drop-down > .drop-down-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+nav > .menu-container > .top-menu-section > .drop-down:hover {
+    color: var(--secondaryColor);
+}
+
+nav > .menu-container > .top-menu-section > .drop-down > .drop-down-menu > .drop-down-item {
+    cursor: pointer;
+}
+
+nav > .menu-container > .top-menu-section > .drop-down > .drop-down-menu > .drop-down-item > a {
+    text-decoration: none;
+    color: var(--primaryColor);
+}
+
+nav > .menu-container > .top-menu-section > .drop-down > .drop-down-menu > .drop-down-item > a:hover, nav > .menu-container > .top-menu-section > .menu-item > a:hover {
+    color: var(--secondaryColor);
+}
+
+nav > .menu-container > .top-social-section {
+    flex-shrink: 1;
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+}
+
+nav > .menu-container > .top-social-section > .social-items {
+    z-index: 50;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    visibility: hidden;
+    padding-top: 0.5rem;
+}
+
+nav > .menu-container > .top-social-section > .social-items > .social-item {
+    opacity: 0;
+}
+
+nav > .menu-container > .top-social-section, nav > .menu-container > .top-social-section > .social-items > .social-item > a {
+    color: var(--primaryColor);
+}
+
+nav > .menu-container > .top-social-section:hover > i {
+    color: var(--secondaryColor);
+}
+
+nav > .menu-container > .top-social-section > .social-items > .social-item:hover > a {
+    color: var(--secondaryColor);
+}
+
+/* Main Section */
+
+main {
+    top: 20vh;
+    position: absolute;
+    width: 100vw;
+}
+
+section {
+    min-height: 80vh;
+    padding: var(--padgePadding);
+    overflow-x: hidden;
+    position: relative;
+}
+
+section > .content > .title {
+    font-size: 5rem;
+    font-family: var(--font2);
+}
+
+section > .content > p {
+    font-size: 1.25rem;
+    width: 50%;
+    margin-top: 2rem;
+}
+
+section > .content > .projects {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+section > .content > .projects > .project {
+    min-height: 27vh;
+    max-height: 27vh;
+    border: 0.25rem var(--secondaryColor) solid;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+section > .content > .projects > .project:hover {
+    box-shadow: 0.25rem 0.25rem 0.5rem var(--primaryColor);
+}
+
+section > .content > .projects > .project:hover > a > .cover {
+    transform: translateY(-102%);
+}
+
+section > .content > .projects > .project > .image {
+    height: 100%;
+    width: 100%;
+}
+
+section > .content > .projects > .project > a > .cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translateY(0);
+    transition: transform calc(var(--transitionDuration)*0.5) linear;
+}
+
+section > .content > .projects > .project > a > .cover > .back {
+    width: 100%;
+    height: 100%;
+    background: var(--secondaryColor);
+    opacity: 0.75;
+}
+
+section > .content > .projects > .project .title {
+    line-height: 2rem;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none;
+    color: var(--primaryColor);
+}
+
+#home > .content > .title > span {
+    display: block;
+    font-size: 9rem;
+    line-height: 10rem;
+    font-family: var(--font1);
+}
+
+#home > .content > .title > span > .name {
+    filter: drop-shadow(-0.4rem 0.4rem 0rem var(--secondaryColor));
+    transition: filter calc(var(--transitionDuration) * 3);
+}
+
+#home > .content > .sub-title {
+    font-family: var(--font2);
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+#home > .content > .mini-title {
+    font-size: 1.5rem;
+    font-family: var(--font3);
+}
+
+section > .content > .back-content {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    bottom: 1rem;
+    right: 3rem;
+    z-index: -1;
+}
+
+/* desktop */
+@media screen and (min-width: 401px){
+    :root {
+        font-size: 16px;
+        --padgePadding: 1rem 3rem;
+    }
+    
+    #theme-changer {
+        right: 3rem;
+        bottom: 2rem;
+    }
+    
+    nav > .menu-container {
+        justify-content: space-around;
+    }
+    
+    nav > .menu-container > .top-menu-section {
+        align-items: center;
+        margin: auto;
+    }
+    
+    nav > .menu-container > .top-menu-section > .drop-down > .drop-down-menu {
+        width: 13rem;
+        gap: 0.5rem;
+        font-size: 1.15rem;
+        visibility: hidden;
+        position: absolute;
+        padding: 1rem 0.5rem;
+        transition: opacity var(--transitionDuration) ease-in-out;
+        backdrop-filter: blur(1rem);
+    }
+    
+    nav > .burger {
+        display: none;
+    }
+    
+    /* Scrollbar design */
+    body::-webkit-scrollbar {
+        display: block;
+        position: absolute;
+        width: 0.15rem;
+    }
+    body::-webkit-scrollbar-thumb {
+        border-radius: 50%;
+        background: var(--secondaryColor);
+    }
+    body::-webkit-scrollbar-track {
+        background: var(--bgSecondryColor);
+    }
+    
+    ::selection{
+        background: var(--secondaryColor);
+        color: var(--bgPrimaryColor);
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 400px){
+    :root {
+        font-size: 11px;
+        --padgePadding: 1.5rem 1.5rem;
+    }
+    
+    #theme-changer {
+        right: 1.5rem;
+        bottom: 1.5rem;
+    }
+    
+    nav > .menu-container {
+        background-color: transparent;
+        backdrop-filter: blur(5rem);
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        width: 60%;
+        height: 89vh;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transform: translatex(125%);
+        transition: transform var(--transitionDuration) linear;
+    }
+    
+    nav > .menu-container > .top-menu-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 2rem;
+        gap: 2.5rem;
+    }
+    
+    nav > .menu-container > .top-menu-section > .menu-item {
+        font-size: 1.5rem;
+    }
+    
+    nav > .menu-container > .top-menu-section > .drop-down > .drop-down-menu {
+        font-size: 1.25rem;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+    }
+    
+    nav > .menu-container > .top-social-section {
+        font-size: 2rem;
+        width: 100%;
+    }
+    
+    nav > .menu-container > .top-social-section > i {
+        display: none;
+    } 
+    
+    nav > .menu-container > .top-social-section > .social-items {
+        position:initial;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        visibility: visible;
+    }
+    
+    nav > .menu-container > .top-social-section > .social-items > .social-item {
+        opacity: 1;
+    }
+    
+    nav > .burger {
+        display: initial;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 2rem;
+    }
+    
+    nav > .burger > .line {
+        width: 2rem;
+        border-radius: 0.1rem;
+        height: 0.3rem;
+        background-color: var(--primaryColor);
+    }
+    
+    nav > .burger.toggle > div:nth-child(1){
+        transform: rotate(45deg) translate(-0.5rem, 0.7rem);
+    }
+    nav > .burger.toggle > div:nth-child(2){
+        opacity: 0;
+    }
+    nav > .burger.toggle > div:nth-child(3){
+        transform: rotate(-45deg) translate(-0.5rem, -0.7rem);
+    }
+    nav > .burger > div {
+        transition: transform var(--transitionDuration) linear
+    }
+
+    section > .content > .back-content {
+        width: 100%;
+    }
+}
